@@ -14,13 +14,13 @@ struct Nix {
 ///
 /// Example of use (in a UIViewController):
 ///
-/// present(Nix.Alert(title: "Warning!", message: "Don't press the button!")
-///            .withOK()
-///            .andAction("PRESS IT", style: .destructive){_ in print("BOOM!!!")})
+///     present(Nix.Alert(title: "Warning!", message: "Don't press the button!")
+///                .withOK()
+///                .andAction("PRESS IT", style: .destructive){_ in print("BOOM!!!")})
 ///
 /// Or even as concise as:
 ///
-/// present(Nix.Alert(message: "Hello, World!").withOK())
+///     present(Nix.Alert(message: "Hello, World!").withOK())
 ///
 struct Alert {
     
