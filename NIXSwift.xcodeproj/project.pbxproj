@@ -10,6 +10,7 @@
 		7A723463201D1583002EC405 /* NIXSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A723459201D1583002EC405 /* NIXSwift.framework */; };
 		7A723468201D1583002EC405 /* NIXSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A723467201D1583002EC405 /* NIXSwiftTests.swift */; };
 		7A72346A201D1583002EC405 /* NIXSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A72345C201D1583002EC405 /* NIXSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A723474201D27A8002EC405 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A723473201D27A8002EC405 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		7A723462201D1583002EC405 /* NIXSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NIXSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A723467201D1583002EC405 /* NIXSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIXSwiftTests.swift; sourceTree = "<group>"; };
 		7A723469201D1583002EC405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A723473201D27A8002EC405 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				7A72345C201D1583002EC405 /* NIXSwift.h */,
 				7A72345D201D1583002EC405 /* Info.plist */,
+				7A723473201D27A8002EC405 /* Alert.swift */,
 			);
 			path = NIXSwift;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					7A723458201D1583002EC405 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					7A723461201D1583002EC405 = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A723474201D27A8002EC405 /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +339,7 @@
 		7A72346E201D1583002EC405 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +353,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.bigland.NIXSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +362,7 @@
 		7A72346F201D1583002EC405 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +384,7 @@
 		7A723471201D1583002EC405 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H75326JR2Z;
 				INFOPLIST_FILE = NIXSwiftTests/Info.plist;
@@ -390,6 +399,7 @@
 		7A723472201D1583002EC405 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H75326JR2Z;
 				INFOPLIST_FILE = NIXSwiftTests/Info.plist;
