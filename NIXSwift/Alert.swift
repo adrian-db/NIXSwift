@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Nix {
+public struct Nix {
 
 /// Wraps UIAlertController, making it more concise to use in most cases.
 ///
@@ -22,7 +22,7 @@ struct Nix {
 ///
 ///     present(Nix.Alert(message: "Hello, World!").withOK())
 ///
-struct Alert {
+public struct Alert {
     
     /// A function that creates a UIAlertController.
     ///
@@ -47,7 +47,7 @@ struct Alert {
     ///     - message: The alert body text.
     ///     - preferredStyle: The style of the alert, if the current platform supports it. Defaults to the default style.
     ///
-    init(title: String? = nil, message: String, preferredStyle: UIAlertControllerStyle = .alert) {
+    public init(title: String? = nil, message: String, preferredStyle: UIAlertControllerStyle = .alert) {
         
         self.init({return UIAlertController(title: title, message: message, preferredStyle: preferredStyle)})
     }
@@ -61,7 +61,7 @@ struct Alert {
     ///
     /// - Returns: This alert, with the given action added.
     ///
-    func withAction(_ title: String?, style: UIAlertActionStyle = .default, handler: ((UIAlertAction)->Void)? = nil)->Alert {
+    public func withAction(_ title: String?, style: UIAlertActionStyle = .default, handler: ((UIAlertAction)->Void)? = nil)->Alert {
         
         return Alert({
             let controller = self.create()
@@ -79,7 +79,7 @@ struct Alert {
     ///
     /// - Returns: This alert, with the given action added.
     ///
-    func andAction(_ title: String?, style: UIAlertActionStyle = .default, handler: ((UIAlertAction)->Void)? = nil)->Alert {
+    public func andAction(_ title: String?, style: UIAlertActionStyle = .default, handler: ((UIAlertAction)->Void)? = nil)->Alert {
         return withAction(title, style: style, handler: handler)
     }
     
@@ -91,7 +91,7 @@ struct Alert {
     ///
     /// - Returns: This alert, with the given action added.
     ///
-    func withOK(title: String? = "OK", handler: ((UIAlertAction)->Void)? = nil)->Alert {
+    public func withOK(title: String? = "OK", handler: ((UIAlertAction)->Void)? = nil)->Alert {
         return withAction(title, handler: handler)
     }
   
@@ -103,7 +103,7 @@ struct Alert {
     ///
     /// - Returns: This alert, with the given action added.
     ///
-    func andOK(title: String? = "OK", handler: ((UIAlertAction)->Void)? = nil)->Alert {
+    public func andOK(title: String? = "OK", handler: ((UIAlertAction)->Void)? = nil)->Alert {
         return withOK(title: title, handler: handler)
     }
     
@@ -115,7 +115,7 @@ struct Alert {
     ///
     /// - Returns: This alert, with the given action added.
     ///
-    func withCancel(title: String? = "Cancel", handler: ((UIAlertAction)->Void)? = nil)->Alert {
+    public func withCancel(title: String? = "Cancel", handler: ((UIAlertAction)->Void)? = nil)->Alert {
         return withAction(title, style: .cancel, handler: handler)
     }
     
@@ -127,14 +127,14 @@ struct Alert {
     ///
     /// - Returns: This alert, with the given action added.
     ///
-    func andCancel(title: String? = "Cancel", handler: ((UIAlertAction)->Void)? = nil)->Alert {
+    public func andCancel(title: String? = "Cancel", handler: ((UIAlertAction)->Void)? = nil)->Alert {
         return withCancel(title: title, handler: handler)
     }
 }
     
 }
 
-extension UIViewController {
+public extension UIViewController {
     
     /// Presents a UIAlertController created by the Alert's create function.
     ///
@@ -143,7 +143,7 @@ extension UIViewController {
     ///     - animated: determines if the alert controller is animated into view or not.
     ///     - completion: closure executed once the alert controller has been presented.
     ///
-    func present(_ alert: Nix.Alert, animated: Bool = true, completion: (()->Void)? = nil) {
+    public func present(_ alert: Nix.Alert, animated: Bool = true, completion: (()->Void)? = nil) {
         
         present(alert.create(), animated: animated, completion: completion)
     }
